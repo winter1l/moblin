@@ -1,0 +1,40 @@
+name: CHZZK iPhone build
+on:
+  push:
+    branches: [iphone-build]
+permissions:
+  contents: read
+jobs:
+  iphone:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build for iPhone
+        run: |
+          cp User.template.xcconfig Config/User.xcconfig
+          xcodebuild -version
+          xcodebuild -downloadComponent MetalToolchain
+          set -o pipefail
+          xcodebuild -scheme Moblin -configuration Release -destination 'generic/platform=iOS' -derivedDataPath "$RUNNER_TEMP/dd" -onlyUsePackageVersionsFromResolvedFile CODE_SIGNING_ALLOWED=NO COMPILER_INDEX_STORE_ENABLE=NO build | xcbeautify
+      - name: Package for personal signing
+        run: |
+          mkdir -p Payload
+          cp -R "$RUNNER_TEMP/dd/Build/Products/Release-iphoneos/Moblin.app" Payload/
+          /usr/libexec/PlistBuddy -c 'Print :MinimumOSVersion' Payload/Moblin.app/Info.plist
+          xcrun lipo -archs Payload/Moblin.app/Moblin
+          ditto -c -k --keepParent Payload Moblin-CHZZK.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Moblin-CHZZK-iPhone
+          path: Moblin-CHZZK.ipa
+          retention-days: 14
+  tests:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v6
+      - name: Run Mac Catalyst tests
+        run: |
+          cp User.template.xcconfig Config/User.xcconfig
+          xcodebuild -downloadComponent MetalToolchain
+          set -o pipefail
+          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' test | xcbeautify
