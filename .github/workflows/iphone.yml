@@ -6,6 +6,7 @@ permissions:
   contents: read
 jobs:
   iphone:
+    if: "!contains(github.event.head_commit.message, '[tests only]')"
     runs-on: xcode-27
     steps:
       - uses: actions/checkout@v6
@@ -37,4 +38,9 @@ jobs:
           cp User.template.xcconfig Config/User.xcconfig
           xcodebuild -downloadComponent MetalToolchain
           set -o pipefail
-          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' test | xcbeautify
+          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile -parallel-testing-enabled NO CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' CODE_SIGN_ENTITLEMENTS='' test | xcbeautify
+      - name: Inspect test host after launch failure
+        if: failure()
+        run: |
+          /usr/bin/log show --last 5m --style compact --predicate '(process == "amfid" OR process == "taskgated-helper" OR process == "kernel" OR process == "launchd") AND eventMessage CONTAINS[c] "Moblin"' | tail -60
+          find "$HOME/Library/Developer/Xcode/DerivedData" -path '*/Debug-maccatalyst/Moblin.app' -exec codesign -d --entitlements - '{}' ';'
