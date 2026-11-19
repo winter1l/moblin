@@ -1,0 +1,27 @@
+name: Capture CHZZK SwiftUI views
+on:
+  push:
+    branches: [preview/chzzk-screens]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: xcode-27
+    steps:
+      - uses: actions/checkout@v6
+      - name: Render Korean views on Mac Catalyst
+        run: |
+          cp User.template.xcconfig Config/User.xcconfig
+          xcodebuild -downloadComponent MetalToolchain
+          set -o pipefail
+          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile -testLanguage ko -testRegion KR -parallel-testing-enabled NO '-only-testing:MoblinTests/ChzzkScreensSuite' CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' CODE_SIGN_ENTITLEMENTS='' test | xcbeautify
+          ROOT=$(find "$HOME/Library/Containers" "$HOME/Documents" -type d -name MoblinChzzkPreviewPNGs 2>/dev/null | head -1 || true)
+          test -n "$ROOT"
+          mkdir -p screenshots
+          cp "$ROOT"/*.png screenshots
+          test "$(ls screenshots/*.png | wc -l)" -eq 6
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chzzk-native-ui
+          path: screenshots/*.png
+          retention-days: 3
