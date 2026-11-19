@@ -73,6 +73,7 @@ struct ChzzkScreensSuite {
                 isOwner: false, bits: nil, highlight: highlight, live: false
             )
         }
+        model.quickButtonChat.moreThanOneStreamingPlatform = true
         model.quickButtonChat.update()
         try await render("06-chat-sample", view: QuickButtonChatView(model: model, orientation: model.orientation,
                                                                     quickButtonChat: model.quickButtonChatState),
