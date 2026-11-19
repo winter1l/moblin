@@ -30,6 +30,7 @@ jobs:
           path: Moblin-CHZZK.ipa
           retention-days: 14
   tests:
+    if: "!contains(github.event.head_commit.message, '[iphone only]')"
     runs-on: xcode-27
     steps:
       - uses: actions/checkout@v6
