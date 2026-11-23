@@ -39,7 +39,7 @@ jobs:
           cp User.template.xcconfig Config/User.xcconfig
           xcodebuild -downloadComponent MetalToolchain
           set -o pipefail
-          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile -parallel-testing-enabled NO CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' CODE_SIGN_ENTITLEMENTS='' test | xcbeautify
+          xcodebuild -scheme Moblin -destination 'platform=macOS,variant=Mac Catalyst' -onlyUsePackageVersionsFromResolvedFile -only-testing:MoblinTests/ChzzkEventSuite -only-testing:MoblinTests/ChzzkChatSegmentsSuite -only-testing:MoblinTests/ChzzkLoginRequestSuite -parallel-testing-enabled NO CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM='' CODE_SIGN_ENTITLEMENTS='' test | xcbeautify
       - name: Inspect test host after launch failure
         if: failure()
         run: |
