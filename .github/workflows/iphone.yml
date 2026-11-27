@@ -1,5 +1,6 @@
 name: CHZZK iPhone build
 on:
+  workflow_dispatch:
   push:
     branches: [iphone-build]
 permissions:
