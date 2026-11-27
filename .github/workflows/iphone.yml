@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: 1660b84c3b3822c6630eeba622b06b3c62ff5f12
+          ref: a6348cdb365b0be31bef38a4ff542085363caf7a
       - name: Build for iPhone
         run: |
           cp User.template.xcconfig Config/User.xcconfig
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: 1660b84c3b3822c6630eeba622b06b3c62ff5f12
+          ref: a6348cdb365b0be31bef38a4ff542085363caf7a
       - name: Run Mac Catalyst tests
         run: |
           cp User.template.xcconfig Config/User.xcconfig
