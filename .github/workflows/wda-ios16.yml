@@ -1,0 +1,31 @@
+name: WDA iPhone 8
+on:
+  push:
+    branches: [codex/wda-ios16-device]
+    paths: [.github/workflows/wda-ios16.yml]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: appium/WebDriverAgent
+          ref: 13d61a83f5aff867d713d9bbb3d069f41ab6b0e6
+          persist-credentials: false
+      - name: Build and package XCTest runner
+        run: |
+          export DEVELOPER_DIR=/Applications/Xcode_16.4.app/Contents/Developer
+          xcodebuild -version
+          xcodebuild build-for-testing -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'generic/platform=iOS' -derivedDataPath "$RUNNER_TEMP/dd" CODE_SIGNING_ALLOWED=NO IPHONEOS_DEPLOYMENT_TARGET=16.0
+          app="$RUNNER_TEMP/dd/Build/Products/Debug-iphoneos/WebDriverAgentRunner-Runner.app"
+          test -f "$app/PlugIns/WebDriverAgentRunner.xctest/WebDriverAgentRunner"
+          mkdir Payload
+          ditto "$app" "Payload/WebDriverAgentRunner-Runner.app"
+          ditto -c -k --keepParent Payload WDA-iPhone8.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: WDA-iPhone8
+          path: WDA-iPhone8.ipa
+          retention-days: 7
