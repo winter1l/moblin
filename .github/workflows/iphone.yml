@@ -11,8 +11,13 @@ jobs:
     runs-on: xcode-27
     steps:
       - uses: actions/checkout@v6
+      - name: Save device preview changes
+        run: cp .github/workflows/chzzk-device-preview.patch "$RUNNER_TEMP/device.patch"
+      - uses: actions/checkout@v6
         with:
-          ref: a6348cdb365b0be31bef38a4ff542085363caf7a
+          ref: cf7ea657afea328407ccda469c299285fe60ca74
+      - name: Apply device preview changes
+        run: git apply "$RUNNER_TEMP/device.patch"
       - name: Build for iPhone
         run: |
           cp User.template.xcconfig Config/User.xcconfig
