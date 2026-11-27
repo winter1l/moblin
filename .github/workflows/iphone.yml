@@ -2,7 +2,7 @@ name: CHZZK iPhone build
 on:
   workflow_dispatch:
   push:
-    branches: [iphone-build]
+    branches: [codex/chzzk-qa-baseline]
 permissions:
   contents: read
 jobs:
@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: 1660b84c3b3822c6630eeba622b06b3c62ff5f12
+          ref: 002d8f540f81d3e5b6644f776cedda231e2a99a0
       - name: Build for iPhone
         run: |
           cp User.template.xcconfig Config/User.xcconfig
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: 1660b84c3b3822c6630eeba622b06b3c62ff5f12
+          ref: 002d8f540f81d3e5b6644f776cedda231e2a99a0
       - name: Run Mac Catalyst tests
         run: |
           cp User.template.xcconfig Config/User.xcconfig

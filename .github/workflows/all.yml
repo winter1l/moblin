@@ -6,9 +6,11 @@ on:
 
 jobs:
   checks:
-    runs-on: macos-26
+    runs-on: xcode-27
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: 1660b84c3b3822c6630eeba622b06b3c62ff5f12
       - uses: actions/setup-python@v7
         with:
           python-version: '3.14'
