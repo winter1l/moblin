@@ -1,5 +1,5 @@
 diff --git a/Common/Localizable.xcstrings b/Common/Localizable.xcstrings
-index a0867b3..1eab162 100644
+index a0867b3..d5ba908 100644
 --- a/Common/Localizable.xcstrings
 +++ b/Common/Localizable.xcstrings
 @@ -19022,6 +19022,16 @@
@@ -74,12 +74,12 @@ index a0867b3..1eab162 100644
          }
        }
      },
-+    "3. Under API Scopes, select **user read, chat read, chat write, restriction write, and donation read**, then tap Save → Register." : {
++    "3. Under API Scopes, select **user read, chat read, chat write, restriction write, donation read, subscription read, and broadcast settings read and write**, then tap Save → Register." : {
 +      "localizations" : {
 +        "ko" : {
 +          "stringUnit" : {
 +            "state" : "translated",
-+            "value" : "3. ‘API Scopes’에서 **유저 조회, 채팅 메시지 조회, 채팅 메시지 쓰기, 활동제한 쓰기, 후원 조회**를 선택하고 ‘저장’ → ‘등록’을 누르세요."
++            "value" : "3. ‘API Scopes’에서 **유저 조회, 채팅 메시지 조회, 채팅 메시지 쓰기, 활동제한 쓰기, 후원 조회, 구독 조회, 방송 설정 조회, 방송 설정 변경**를 선택하고 ‘저장’ → ‘등록’을 누르세요."
 +          }
 +        }
 +      }
@@ -104,6 +104,21 @@ index a0867b3..1eab162 100644
      "API token" : {
        "localizations" : {
          "de" : {
+@@ -65850,12 +65890,12 @@
+         }
+       }
+     },
+-    "Check the CHZZK chat and donation read permissions and log in again." : {
++    "Check the CHZZK chat, donation, and subscription read permissions and log in again." : {
+       "localizations" : {
+         "ko" : {
+           "stringUnit" : {
+             "state" : "translated",
+-            "value" : "치지직 앱의 ‘채팅 메시지 조회’와 ‘후원 조회’ 권한을 확인하고 다시 로그인해 주세요."
++            "value" : "치지직 앱의 ‘채팅 메시지 조회’, ‘후원 조회’, ‘구독 조회’ 권한을 확인하고 다시 로그인해 주세요."
+           }
+         }
+       }
 @@ -67064,16 +67104,6 @@
          }
        }
@@ -232,7 +247,154 @@ index a0867b3..1eab162 100644
      },
      "Copy to clipboard" : {
        "localizations" : {
-@@ -92722,6 +92742,16 @@
+@@ -92712,6 +92732,146 @@
+         }
+       }
+     },
++    "Video donation ₩%@" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "영상 후원 ₩%@"
++          }
++        }
++      }
++    },
++    "Chat donation ₩%@" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "일반 후원 ₩%@"
++          }
++        }
++      }
++    },
++    "Tier %lld" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "티어 %lld"
++          }
++        }
++      }
++    },
++    "%lld months" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "%lld개월"
++          }
++        }
++      }
++    },
++    "Subscription" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "구독"
++          }
++        }
++      }
++    },
++    "Chat donations" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "일반 후원"
++          }
++        }
++      }
++    },
++    "Video donations" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "영상 후원"
++          }
++        }
++      }
++    },
++    "No categories found." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "검색 결과가 없습니다."
++          }
++        }
++      }
++    },
++    "Could not search CHZZK categories." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "치지직 카테고리를 검색하지 못했어요."
++          }
++        }
++      }
++    },
++    "Enable the CHZZK broadcast settings write permission and log in again." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "‘방송 설정 변경’ 권한을 선택하고 다시 로그인하세요."
++          }
++        }
++      }
++    },
++    "Enable the CHZZK broadcast settings read permission and log in again." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "‘방송 설정 조회’ 권한을 선택하고 다시 로그인하세요."
++          }
++        }
++      }
++    },
++    "Could not load or save CHZZK broadcast settings." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "치지직 방송 설정을 불러오거나 저장하지 못했어요."
++          }
++        }
++      }
++    },
++    "Enter a broadcast title." : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "방송 제목을 입력하세요."
++          }
++        }
++      }
++    },
++    "Retry" : {
++      "localizations" : {
++        "ko" : {
++          "stringUnit" : {
++            "state" : "translated",
++            "value" : "다시 시도"
++          }
++        }
++      }
++    },
+     "Donated ₩%@" : {
+       "localizations" : {
+         "ko" : {
+@@ -92722,6 +92882,16 @@
          }
        }
      },
@@ -249,7 +411,7 @@ index a0867b3..1eab162 100644
      "Done" : {
        "localizations" : {
          "de" : {
-@@ -95370,6 +95400,16 @@
+@@ -95370,6 +95540,16 @@
          }
        }
      },
@@ -266,7 +428,7 @@ index a0867b3..1eab162 100644
      "Emoji" : {
        "localizations" : {
          "de" : {
-@@ -133624,12 +133664,12 @@
+@@ -133624,12 +133804,12 @@
          }
        }
      },
@@ -281,7 +443,7 @@ index a0867b3..1eab162 100644
            }
          }
        }
-@@ -134966,26 +135006,6 @@
+@@ -134966,26 +135146,6 @@
          }
        }
      },
@@ -308,7 +470,7 @@ index a0867b3..1eab162 100644
      "In video" : {
        "localizations" : {
          "de" : {
-@@ -149264,16 +149284,6 @@
+@@ -149264,16 +149424,6 @@
          }
        }
      },
@@ -325,7 +487,7 @@ index a0867b3..1eab162 100644
      "Login" : {
        "localizations" : {
          "de" : {
-@@ -188888,16 +188898,6 @@
+@@ -188888,16 +189038,6 @@
          }
        }
      },
@@ -342,7 +504,7 @@ index a0867b3..1eab162 100644
      "OpenAI compatible service" : {
        "localizations" : {
          "de" : {
-@@ -193891,16 +193891,6 @@
+@@ -193891,16 +194031,6 @@
          }
        }
      },
@@ -359,7 +521,7 @@ index a0867b3..1eab162 100644
      "Paste layout" : {
        "comment" : "A button that pastes a layout.",
        "isCommentAutoGenerated" : true
-@@ -213167,16 +213157,6 @@
+@@ -213167,16 +213297,6 @@
          }
        }
      },
@@ -376,7 +538,7 @@ index a0867b3..1eab162 100644
      "Regular" : {
        "localizations" : {
          "de" : {
-@@ -254074,16 +254054,6 @@
+@@ -254074,16 +254194,6 @@
          }
        }
      },
@@ -393,7 +555,7 @@ index a0867b3..1eab162 100644
      "Singles" : {
        "localizations" : {
          "de" : {
-@@ -270730,16 +270700,6 @@
+@@ -270730,16 +270840,6 @@
          }
        }
      },
@@ -410,7 +572,7 @@ index a0867b3..1eab162 100644
      "Streamer" : {
        "localizations" : {
          "de" : {
-@@ -279162,26 +279122,6 @@
+@@ -279162,26 +279262,6 @@
          }
        }
      },
@@ -437,7 +599,7 @@ index a0867b3..1eab162 100644
      "Tap screen to focus" : {
        "localizations" : {
          "de" : {
-@@ -293320,26 +293260,6 @@
+@@ -293320,26 +293400,6 @@
          }
        }
      },
@@ -464,7 +626,7 @@ index a0867b3..1eab162 100644
      "To show the widget in sync with high latency cameras." : {
        "localizations" : {
          "de" : {
-@@ -302486,16 +302406,6 @@
+@@ -302486,16 +302546,6 @@
          }
        }
      },
@@ -481,11 +643,310 @@ index a0867b3..1eab162 100644
      "Unit" : {
        "comment" : "A title for a sheet that lets the user pick a unit.",
        "isCommentAutoGenerated" : true,
+diff --git a/Moblin/StreamingPlatforms/Chzzk/ChzzkApi.swift b/Moblin/StreamingPlatforms/Chzzk/ChzzkApi.swift
+index 2ea2cab..82cee39 100644
+--- a/Moblin/StreamingPlatforms/Chzzk/ChzzkApi.swift
++++ b/Moblin/StreamingPlatforms/Chzzk/ChzzkApi.swift
+@@ -10,6 +10,36 @@ struct ChzzkTokens: Codable {
+     let expiresAt: Date
+ }
+ 
++struct ChzzkLiveCategory: Decodable {
++    let categoryId: String
++    let categoryType: String
++    let categoryValue: String
++}
++
++struct ChzzkLiveSettings: Decodable {
++    let defaultLiveTitle: String
++    let category: ChzzkLiveCategory?
++}
++
++private struct ChzzkCategoryResults: Decodable {
++    let data: [ChzzkLiveCategory]
++}
++
++enum ChzzkLiveUpdate {
++    case title(String)
++    case category(ChzzkLiveCategory)
++
++    var fields: [String: String] {
++        switch self {
++        case let .title(title): ["defaultLiveTitle": title]
++        case let .category(category): [
++                "categoryType": category.categoryType,
++                "categoryId": category.categoryId,
++            ]
++        }
++    }
++}
++
+ struct ChzzkUser: Decodable {
+     let channelId: String
+     let channelName: String
+@@ -276,6 +306,27 @@ final class ChzzkApi {
+                               bodyData: JSONSerialization.data(withJSONObject: body)) as ChzzkEmpty?
+     }
+ 
++    func liveSettings(token: String) async throws -> ChzzkLiveSettings {
++        try await content(path: "/open/v1/lives/setting", accessToken: token)
++    }
++
++    func updateLiveSettings(_ update: ChzzkLiveUpdate, token: String) async throws {
++        _ = try await request(path: "/open/v1/lives/setting", method: "PATCH", body: update.fields,
++                              accessToken: token) as ChzzkEmpty?
++    }
++
++    func categories(query: String) async throws -> [ChzzkLiveCategory] {
++        let result: ChzzkCategoryResults? = try await request(
++            path: "/open/v1/categories/search", method: "GET", query: [URLQueryItem(
++                name: "query",
++                value: query
++            )],
++            authenticateClient: true
++        )
++        guard let result else { throw ChzzkApiError.invalidResponse }
++        return result.data
++    }
++
+     func session(accessToken: String) async throws -> URL {
+         let session: ChzzkSession = try await content(path: "/open/v1/sessions/auth",
+                                                       accessToken: accessToken)
+@@ -324,7 +375,8 @@ final class ChzzkApi {
+ 
+     private func request<T: Decodable>(path: String, method: String, body: [String: String]? = nil,
+                                        query: [URLQueryItem] = [], accessToken: String? = nil,
+-                                       bodyData: Data? = nil) async throws -> T?
++                                       bodyData: Data? = nil,
++                                       authenticateClient: Bool = false) async throws -> T?
+     {
+         var url = URLComponents(string: "https://openapi.chzzk.naver.com")!
+         url.path = path
+@@ -336,6 +388,10 @@ final class ChzzkApi {
+         request.httpMethod = method
+         request.cachePolicy = .reloadIgnoringLocalCacheData
+         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
++        if authenticateClient {
++            request.setValue(clientId, forHTTPHeaderField: "Client-Id")
++            request.setValue(clientSecret, forHTTPHeaderField: "Client-Secret")
++        }
+         if let accessToken {
+             request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+         }
+diff --git a/Moblin/StreamingPlatforms/Chzzk/ChzzkChat.swift b/Moblin/StreamingPlatforms/Chzzk/ChzzkChat.swift
+index 25f0542..982c242 100644
+--- a/Moblin/StreamingPlatforms/Chzzk/ChzzkChat.swift
++++ b/Moblin/StreamingPlatforms/Chzzk/ChzzkChat.swift
+@@ -34,6 +34,7 @@ struct ChzzkDonation: Decodable {
+     let channelId: String
+     let donatorChannelId: String?
+     let donatorNickname: String?
++    let donationType: String?
+     let donationText: String?
+     let payAmount: String
+ 
+@@ -46,7 +47,7 @@ struct ChzzkDonation: Decodable {
+     }
+ 
+     private enum CodingKeys: CodingKey {
+-        case channelId, donatorChannelId, donatorNickname, donationText, payAmount
++        case channelId, donatorChannelId, donatorNickname, donationType, donationText, payAmount
+     }
+ 
+     init(from decoder: any Decoder) throws {
+@@ -54,6 +55,7 @@ struct ChzzkDonation: Decodable {
+         channelId = try values.decode(String.self, forKey: .channelId)
+         donatorChannelId = try values.decodeIfPresent(String.self, forKey: .donatorChannelId)
+         donatorNickname = try values.decodeIfPresent(String.self, forKey: .donatorNickname)
++        donationType = try values.decodeIfPresent(String.self, forKey: .donationType)
+         donationText = try values.decodeIfPresent(String.self, forKey: .donationText)
+         if let amount = try? values.decode(Int.self, forKey: .payAmount) {
+             payAmount = String(amount)
+@@ -63,6 +65,15 @@ struct ChzzkDonation: Decodable {
+     }
+ }
+ 
++struct ChzzkSubscription: Decodable {
++    let channelId: String
++    let subscriberChannelId: String?
++    let subscriberNickname: String
++    let tierName: String?
++    let tierNo: Int?
++    let month: Int?
++}
++
+ struct ChzzkSystemEvent: Decodable {
+     struct Payload: Decodable {
+         let sessionKey: String?
+@@ -77,6 +88,7 @@ enum ChzzkEvent: Decodable {
+     case system(ChzzkSystemEvent)
+     case chat(ChzzkChatMessage)
+     case donation(ChzzkDonation)
++    case subscription(ChzzkSubscription)
+     case unknown
+ 
+     init(from decoder: any Decoder) throws {
+@@ -93,6 +105,8 @@ enum ChzzkEvent: Decodable {
+             self = try .system(body())
+         case "CHAT":
+             self = try .chat(body())
++        case "SUBSCRIPTION":
++            self = try .subscription(body())
+         case "DONATION":
+             self = try .donation(body())
+         default:
+@@ -113,7 +127,7 @@ enum ChzzkSubscriptionError: Error {
+ @MainActor
+ func subscribeToChzzkEvents(_ subscribe: (String) async throws -> Void) async throws {
+     var allowed = false
+-    for event in ["chat", "donation"] {
++    for event in ["chat", "donation", "subscription"] {
+         try Task.checkCancellation()
+         do {
+             try await subscribe(event)
+@@ -133,6 +147,7 @@ final class ChzzkChat {
+     private let accessToken: @MainActor (Bool) async throws -> String
+     private let onChat: (ChzzkChatMessage) -> Void
+     private let onDonation: (ChzzkDonation) -> Void
++    private let onSubscription: (ChzzkSubscription) -> Void
+     private let onPermissionsDenied: () -> Void
+     private var task: Task<Void, Never>?
+     private var socket: URLSessionWebSocketTask?
+@@ -140,15 +155,18 @@ final class ChzzkChat {
+     private let setupTimeout = MainTimer()
+     private var handshake: ChzzkHandshake?
+     private var chatSubscribed = false
++    private var subscriptionSubscribed = false
+     private var donationSubscribed = false
+ 
+     init(api: ChzzkApi, accessToken: @escaping @MainActor (Bool) async throws -> String,
+          onChat: @escaping (ChzzkChatMessage) -> Void, onDonation: @escaping (ChzzkDonation) -> Void,
++         onSubscription: @escaping (ChzzkSubscription) -> Void,
+          onPermissionsDenied: @escaping () -> Void)
+     {
+         self.api = api
+         self.accessToken = accessToken
+         self.onChat = onChat
++        self.onSubscription = onSubscription
+         self.onDonation = onDonation
+         self.onPermissionsDenied = onPermissionsDenied
+     }
+@@ -181,7 +199,7 @@ final class ChzzkChat {
+                     }
+                     logger.debug("chzzk: Session disconnected")
+                 }
+-                if chatSubscribed || donationSubscribed {
++                if chatSubscribed || isEventConnected() {
+                     delay = 2
+                 }
+                 closeSocket()
+@@ -202,6 +220,7 @@ final class ChzzkChat {
+         heartbeat.stop()
+         handshake = nil
+         chatSubscribed = false
++        subscriptionSubscribed = false
+         donationSubscribed = false
+         socket?.cancel(with: .goingAway, reason: nil)
+         socket = nil
+@@ -211,8 +230,8 @@ final class ChzzkChat {
+         chatSubscribed
+     }
+ 
+-    func isDonationConnected() -> Bool {
+-        donationSubscribed
++    func isEventConnected() -> Bool {
++        donationSubscribed || subscriptionSubscribed
+     }
+ 
+     private func connect(token: String) async throws {
+@@ -286,8 +305,10 @@ final class ChzzkChat {
+                     chatSubscribed = subscribed
+                 } else if system.data.eventType == "DONATION" {
+                     donationSubscribed = subscribed
++                } else if system.data.eventType == "SUBSCRIPTION" {
++                    subscriptionSubscribed = subscribed
+                 }
+-                if chatSubscribed || donationSubscribed {
++                if chatSubscribed || isEventConnected() {
+                     setupTimeout.stop()
+                 }
+             default:
+@@ -295,6 +316,8 @@ final class ChzzkChat {
+             }
+         case let .chat(message):
+             onChat(message)
++        case let .subscription(subscription):
++            onSubscription(subscription)
+         case let .donation(donation):
+             onDonation(donation)
+         case .unknown:
+diff --git a/Moblin/Various/Model/Model.swift b/Moblin/Various/Model/Model.swift
+index b9b33da..984e0d7 100644
+--- a/Moblin/Various/Model/Model.swift
++++ b/Moblin/Various/Model/Model.swift
+@@ -2472,7 +2472,7 @@ final class Model: NSObject, ObservableObject {
+ 
+     func isEventsConnected() -> Bool {
+         if isChzzkEventsConfigured() {
+-            return chzzkChat?.isDonationConnected() == true
++            return chzzkChat?.isEventConnected() == true
+                 && (!isTwitchEventSubConfigured() || isTwitchEventsConnected())
+         }
+         return isTwitchEventsConnected()
 diff --git a/Moblin/Various/Model/ModelChzzk.swift b/Moblin/Various/Model/ModelChzzk.swift
-index 83623c8..d05caeb 100644
+index 83623c8..74e0e8a 100644
 --- a/Moblin/Various/Model/ModelChzzk.swift
 +++ b/Moblin/Various/Model/ModelChzzk.swift
-@@ -141,8 +141,15 @@ extension Model {
+@@ -38,15 +38,15 @@ struct ChzzkViewerHistory {
+ }
+ 
+ @MainActor
+-func performChzzkWrite(accessToken: (Bool) async throws -> String,
+-                       write: (String) async throws -> Void) async throws
++func performChzzkWrite<T>(accessToken: (Bool) async throws -> String,
++                          write: (String) async throws -> T) async throws -> T
+ {
+     let token = try await accessToken(false)
+     do {
+-        try await write(token)
++        return try await write(token)
+     } catch ChzzkApiError.status(401) {
+         let refreshed = try await accessToken(true)
+-        try await write(refreshed)
++        return try await write(refreshed)
+     }
+ }
+ 
+@@ -76,6 +76,28 @@ func chzzkWriteErrorDetail(_ error: Error, action: ChzzkModerationAction?) -> St
+ }
+ 
+ extension Model {
++    func withChzzkLiveSettings<T>(streamId: UUID, channelId: String,
++                                  operation: (ChzzkApi, String) async throws -> T) async throws -> T
++    {
++        guard let api = chzzkApi else { throw URLError(.userAuthenticationRequired) }
++        return try await performChzzkWrite { refresh in
++            guard self.stream.id == streamId, self.stream.chzzkChannelId == channelId,
++                  self.chzzkLoggedIn
++            else {
++                throw CancellationError()
++            }
++            return try await self.chzzkAccessToken(forceRefresh: refresh)
++        } write: { token in
++            try Task.checkCancellation()
++            guard self.stream.id == streamId, self.stream.chzzkChannelId == channelId,
++                  self.chzzkLoggedIn
++            else {
++                throw CancellationError()
++            }
++            return try await operation(api, token)
++        }
++    }
++
+     func chzzkChannelUpdated() {
+         reloadChzzkChat()
+         reloadViewers()
+@@ -141,8 +163,15 @@ extension Model {
          performChzzkChatAction(action: action, showError: true) { api, token in
              try await api.moderate(action, target: target, accessToken: token)
          } onSuccess: {
@@ -503,20 +964,87 @@ index 83623c8..d05caeb 100644
              }
              self.makeToast(title: String(localized: "CHZZK moderation updated."))
          }
-@@ -252,7 +259,12 @@ extension Model {
+@@ -203,12 +232,14 @@ extension Model {
+                 self?.appendChzzkChat(event)
+             }, onDonation: { [weak self] event in
+                 self?.appendChzzkDonation(event)
++            }, onSubscription: { [weak self] event in
++                self?.appendChzzkSubscription(event)
+             }, onPermissionsDenied: { [weak self] in
+                 self?.chzzkReadPermissionsDenied = true
+                 self?
+                     .makeErrorToast(
+                         title: String(
+-                            localized: "Check the CHZZK chat and donation read permissions and log in again."
++                            localized: "Check the CHZZK chat, donation, and subscription read permissions and log in again."
+                         )
+                     )
+             })
+@@ -251,17 +282,47 @@ extension Model {
+         }
          let nickname = event.donatorNickname.flatMap { $0.isEmpty ? nil : $0 }
              ?? String(localized: "Anonymous")
-         let title = String(localized: "Donated ₩\(event.payAmount)")
+-        let title = String(localized: "Donated ₩\(event.payAmount)")
 -        makeToast(title: "\(nickname) · \(title)", subTitle: event.donationText)
-+        if stream.chzzkToastDonations {
-+            makeToast(title: "\(nickname) · \(title)", subTitle: event.donationText)
++        let video = event.donationType == "VIDEO"
++        let title = switch event.donationType {
++        case "VIDEO": String(localized: "Video donation ₩\(event.payAmount)")
++        case "CHAT": String(localized: "Chat donation ₩\(event.payAmount)")
++        default: String(localized: "Donated ₩\(event.payAmount)")
 +        }
-+        guard stream.chzzkChatDonations else {
-+            return
++        appendChzzkAlert(nickname: nickname, userId: event.donatorChannelId, title: title,
++                         text: event.donationText, icon: video ? "video.fill" : "gift.fill",
++                         chat: video ? stream.chzzkChatVideoDonations : stream.chzzkChatDonations,
++                         toast: video ? stream.chzzkToastVideoDonations : stream.chzzkToastDonations,
++                         target: event.moderationTarget)
++    }
++
++    private func appendChzzkSubscription(_ event: ChzzkSubscription) {
++        guard event.channelId == stream.chzzkChannelId else { return }
++        let tier = event.tierName?.isEmpty == false ? event.tierName :
++            event.tierNo.map { String(localized: "Tier \($0)") }
++        let months = event.month.map { String(localized: "\($0) months") }
++        appendChzzkAlert(nickname: event.subscriberNickname, userId: event.subscriberChannelId,
++                         title: String(localized: "Subscription"),
++                         text: [tier, months].compactMap { $0 }.joined(separator: " · "),
++                         icon: "star.fill", chat: stream.chzzkChatSubscriptions,
++                         toast: stream.chzzkToastSubscriptions, target: nil)
++    }
++
++    private func appendChzzkAlert(nickname: String, userId: String?, title: String, text: String?,
++                                  icon: String, chat: Bool, toast: Bool, target: ChzzkModerationTarget?)
++    {
++        if toast {
++            makeToast(title: "\(nickname) · \(title)", subTitle: text)
 +        }
++        guard chat else { return }
          appendChatMessage(
              platform: .chzzk,
              messageId: nil,
+             displayName: nickname,
+             user: nickname,
+-            userId: event.donatorChannelId,
++            userId: userId,
+             userColor: nil,
+             userBadges: [],
+-            segments: makeChatPostTextSegments(text: event.donationText ?? ""),
++            segments: makeChatPostTextSegments(text: text ?? ""),
+             timestamp: statusOther.digitalClock,
+             timestampTime: .now,
+             isAction: false,
+@@ -271,10 +332,10 @@ extension Model {
+             bits: nil,
+             highlight: ChatHighlight(kind: .other,
+                                      barColor: .mint,
+-                                     image: "gift.fill",
++                                     image: icon,
+                                      titleSegments: makeChatPostTextSegments(text: title)),
+             live: true,
+-            chzzkTarget: event.moderationTarget
++            chzzkTarget: target
+         )
+     }
+ }
 diff --git a/Moblin/Various/Model/ModelRemoteControlStreams.swift b/Moblin/Various/Model/ModelRemoteControlStreams.swift
 index 5ab56ac..eac20ff 100644
 --- a/Moblin/Various/Model/ModelRemoteControlStreams.swift
@@ -592,64 +1120,122 @@ index 919d414..5f5d66e 100644
          createStreamWizard.obsAddress = ""
          createStreamWizard.obsPort = ""
 diff --git a/Moblin/Various/Settings/SettingsStream.swift b/Moblin/Various/Settings/SettingsStream.swift
-index 19fd611..5539c92 100644
+index 19fd611..ff126fd 100644
 --- a/Moblin/Various/Settings/SettingsStream.swift
 +++ b/Moblin/Various/Settings/SettingsStream.swift
-@@ -1259,6 +1259,18 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1259,6 +1259,52 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
      @Published var youTubeScheduleStreamVisibility: YouTubeApiLiveBroadcaseVisibility = .public
      @Published var youTubeScheduleStreamAutoStop: Bool = true
      @Published var soopChannelName: String = ""
++    @Published private var storedChzzkChatSubscriptions: Bool?
++    var chzzkChatSubscriptions: Bool {
++        get { storedChzzkChatSubscriptions ?? true }
++        set { storedChzzkChatSubscriptions = newValue }
++    }
++
++    @Published private var storedChzzkChatVideoDonations: Bool?
++    var chzzkChatVideoDonations: Bool {
++        get { storedChzzkChatVideoDonations ?? chzzkChatDonations }
++        set { storedChzzkChatVideoDonations = newValue }
++    }
++
 +    @Published private var storedChzzkChatDonations: Bool? = true
 +    var chzzkChatDonations: Bool {
 +        get { storedChzzkChatDonations ?? true }
-+        set { storedChzzkChatDonations = newValue }
++        set {
++            if storedChzzkChatVideoDonations == nil {
++                storedChzzkChatVideoDonations = chzzkChatDonations
++            }
++            storedChzzkChatDonations = newValue
++        }
++    }
++
++    @Published private var storedChzzkToastSubscriptions: Bool?
++    var chzzkToastSubscriptions: Bool {
++        get { storedChzzkToastSubscriptions ?? true }
++        set { storedChzzkToastSubscriptions = newValue }
++    }
++
++    @Published private var storedChzzkToastVideoDonations: Bool?
++    var chzzkToastVideoDonations: Bool {
++        get { storedChzzkToastVideoDonations ?? chzzkToastDonations }
++        set { storedChzzkToastVideoDonations = newValue }
 +    }
 +
 +    @Published private var storedChzzkToastDonations: Bool? = true
 +    var chzzkToastDonations: Bool {
 +        get { storedChzzkToastDonations ?? true }
-+        set { storedChzzkToastDonations = newValue }
++        set {
++            if storedChzzkToastVideoDonations == nil {
++                storedChzzkToastVideoDonations = chzzkToastDonations
++            }
++            storedChzzkToastDonations = newValue
++        }
 +    }
 +
      @Published private var storedChzzkChannelId: String? = ""
      var chzzkChannelId: String {
          get { storedChzzkChannelId ?? "" }
-@@ -1364,6 +1376,8 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1364,6 +1410,12 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
          case youTubeScheduleStreamVisibility
          case youTubeScheduleStreamAutoStop
          case afreecaTvChannelName
++        case chzzkChatSubscriptions
++        case chzzkChatVideoDonations
 +        case chzzkChatDonations
++        case chzzkToastSubscriptions
++        case chzzkToastVideoDonations
 +        case chzzkToastDonations
          case chzzkChannelId
          case afreecaTvStreamId
          case openStreamingPlatformUrl
-@@ -1460,6 +1474,8 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1460,6 +1512,12 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
          try container.encode(.youTubeScheduleStreamVisibility, youTubeScheduleStreamVisibility)
          try container.encode(.youTubeScheduleStreamAutoStop, youTubeScheduleStreamAutoStop)
          try container.encode(.afreecaTvChannelName, soopChannelName)
++        try container.encode(.chzzkChatSubscriptions, chzzkChatSubscriptions)
++        try container.encode(.chzzkChatVideoDonations, chzzkChatVideoDonations)
 +        try container.encode(.chzzkChatDonations, chzzkChatDonations)
++        try container.encode(.chzzkToastSubscriptions, chzzkToastSubscriptions)
++        try container.encode(.chzzkToastVideoDonations, chzzkToastVideoDonations)
 +        try container.encode(.chzzkToastDonations, chzzkToastDonations)
          try container.encode(.chzzkChannelId, chzzkChannelId)
          try container.encode(.afreecaTvStreamId, soopStreamId)
          try container.encode(.openStreamingPlatformUrl, openStreamingPlatformUrl)
-@@ -1563,6 +1579,8 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1563,6 +1621,12 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
                                                             .public)
          youTubeScheduleStreamAutoStop = container.decode(.youTubeScheduleStreamAutoStop, Bool.self, true)
          soopChannelName = container.decode(.afreecaTvChannelName, String.self, "")
++        storedChzzkChatSubscriptions = container.decode(.chzzkChatSubscriptions, Bool?.self, nil)
++        storedChzzkChatVideoDonations = container.decode(.chzzkChatVideoDonations, Bool?.self, nil)
 +        storedChzzkChatDonations = container.decode(.chzzkChatDonations, Bool?.self, nil)
++        storedChzzkToastSubscriptions = container.decode(.chzzkToastSubscriptions, Bool?.self, nil)
++        storedChzzkToastVideoDonations = container.decode(.chzzkToastVideoDonations, Bool?.self, nil)
 +        storedChzzkToastDonations = container.decode(.chzzkToastDonations, Bool?.self, nil)
          storedChzzkChannelId = container.decode(.chzzkChannelId, String?.self, nil)
          soopStreamId = container.decode(.afreecaTvStreamId, String.self, "")
          openStreamingPlatformUrl = container.decode(.openStreamingPlatformUrl, String.self, "")
-@@ -1645,8 +1663,26 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1645,8 +1709,38 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
          youTubeVideoIds.split(separator: ",").map { String($0) }
      }
  
 -    func updateChzzkChannelId(from new: SettingsStream) -> Bool {
 -        guard let channelId = new.storedChzzkChannelId?.trim(), channelId != chzzkChannelId else {
 +    func updateChzzkDonationAlerts(from new: SettingsStream) {
++        if let enabled = new.storedChzzkChatSubscriptions {
++            chzzkChatSubscriptions = enabled
++        }
++        if let enabled = new.storedChzzkChatVideoDonations {
++            chzzkChatVideoDonations = enabled
++        }
 +        if let enabled = new.storedChzzkChatDonations {
 +            chzzkChatDonations = enabled
++        }
++        if let enabled = new.storedChzzkToastSubscriptions {
++            chzzkToastSubscriptions = enabled
++        }
++        if let enabled = new.storedChzzkToastVideoDonations {
++            chzzkToastVideoDonations = enabled
 +        }
 +        if let enabled = new.storedChzzkToastDonations {
 +            chzzkToastDonations = enabled
@@ -670,20 +1256,46 @@ index 19fd611..5539c92 100644
              return false
          }
          chzzkChannelId = channelId
-@@ -1693,6 +1729,8 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
+@@ -1693,6 +1787,12 @@ class SettingsStream: Codable, Identifiable, Equatable, ObservableObject, Named,
          new.youTubeScheduleStreamVisibility = youTubeScheduleStreamVisibility
          new.youTubeScheduleStreamAutoStop = youTubeScheduleStreamAutoStop
          new.soopChannelName = soopChannelName
++        new.chzzkChatSubscriptions = chzzkChatSubscriptions
++        new.chzzkChatVideoDonations = chzzkChatVideoDonations
 +        new.chzzkChatDonations = chzzkChatDonations
++        new.chzzkToastSubscriptions = chzzkToastSubscriptions
++        new.chzzkToastVideoDonations = chzzkToastVideoDonations
 +        new.chzzkToastDonations = chzzkToastDonations
          new.chzzkChannelId = chzzkChannelId
          new.soopStreamId = soopStreamId
          new.openStreamingPlatformUrl = openStreamingPlatformUrl
+diff --git a/Moblin/View/ControlBar/QuickButton/QuickButtonLiveView.swift b/Moblin/View/ControlBar/QuickButton/QuickButtonLiveView.swift
+index 1a91fe6..64e9c6e 100644
+--- a/Moblin/View/ControlBar/QuickButton/QuickButtonLiveView.swift
++++ b/Moblin/View/ControlBar/QuickButton/QuickButtonLiveView.swift
+@@ -163,7 +163,16 @@ struct QuickButtonLiveView: View {
+                     SoopView(stream: stream)
+                 }
+                 if !stream.chzzkChannelId.isEmpty {
+-                    Section {} header: {
++                    Section {
++                        if model.chzzkLoggedIn {
++                            ChzzkStreamLiveSettingsView(
++                                model: model,
++                                streamId: stream.id,
++                                channelId: stream.chzzkChannelId
++                            )
++                            .id(stream.chzzkChannelId)
++                        }
++                    } header: {
+                         ChzzkLogoAndNameView(channel: stream.chzzkChannelId)
+                     }
+                 }
 diff --git a/Moblin/View/Settings/Streams/Stream/Chzzk/StreamChzzkSettingsView.swift b/Moblin/View/Settings/Streams/Stream/Chzzk/StreamChzzkSettingsView.swift
-index 9524c5e..903e853 100644
+index 9524c5e..5d3310a 100644
 --- a/Moblin/View/Settings/Streams/Stream/Chzzk/StreamChzzkSettingsView.swift
 +++ b/Moblin/View/Settings/Streams/Stream/Chzzk/StreamChzzkSettingsView.swift
-@@ -10,49 +10,50 @@ struct ChzzkSetupGuideLink: View {
+@@ -10,49 +10,178 @@ struct ChzzkSetupGuideLink: View {
      var body: some View {
          NavigationLink("CHZZK setup guide") {
              Form {
@@ -723,7 +1335,7 @@ index 9524c5e..903e853 100644
 -                Section("API permissions") {
                      Text(
 -                        "Under API Scopes, select read access for user info, chat messages, and donations."
-+                        "3. Under API Scopes, select **user read, chat read, chat write, restriction write, and donation read**, then tap Save → Register."
++                        "3. Under API Scopes, select **user read, chat read, chat write, restriction write, donation read, subscription read, and broadcast settings read and write**, then tap Save → Register."
                      )
 -                    Text("To send chat, post bot replies, or hide messages, also choose chat write.")
 -                    Text("To apply or remove restrictions, enable restriction write permission.")
@@ -763,10 +1375,138 @@ index 9524c5e..903e853 100644
 +        }
 +        .buttonStyle(.borderless)
 +    }
++}
++
++private struct ChzzkCategoryPicker: View {
++    let api: ChzzkApi
++    let select: (ChzzkLiveCategory) -> Void
++    @Environment(\.dismiss) private var dismiss
++    @State private var query = ""
++    @State private var results: [ChzzkLiveCategory] = []
++    @State private var error: String?
++
++    var body: some View {
++        Form {
++            TextField("Search", text: $query)
++                .autocorrectionDisabled(true)
++            if let error {
++                Text(error)
++            }
++            ForEach(results, id: \.categoryId) { category in
++                Button(category.categoryValue) {
++                    select(category)
++                    dismiss()
++                }
++            }
++        }
++        .navigationTitle("Category")
++        .task(id: query) {
++            results = []
++            error = nil
++            guard !query.trim().isEmpty else { return }
++            do {
++                try await Task.sleep(for: .milliseconds(300))
++                let matches = try await api.categories(query: query.trim())
++                try Task.checkCancellation()
++                results = matches
++                if matches.isEmpty {
++                    error = String(localized: "No categories found.")
++                }
++            } catch {
++                if !Task.isCancelled {
++                    self.error = String(localized: "Could not search CHZZK categories.")
++                }
++            }
++        }
++    }
++}
++
++struct ChzzkStreamLiveSettingsView: View {
++    let model: Model
++    let streamId: UUID
++    let channelId: String
++    @State private var settings: ChzzkLiveSettings?
++    @State private var error: String?
++    @State private var saving = false
++
++    private func showError(_ failure: Error, writing: Bool) {
++        if case ChzzkApiError.status(403) = failure {
++            error = writing ?
++                String(localized: "Enable the CHZZK broadcast settings write permission and log in again.") :
++                String(localized: "Enable the CHZZK broadcast settings read permission and log in again.")
++        } else if !(failure is CancellationError), !Task.isCancelled {
++            error = String(localized: "Could not load or save CHZZK broadcast settings.")
++        }
++    }
++
++    private func load() async {
++        do {
++            let current = try await model
++                .withChzzkLiveSettings(streamId: streamId, channelId: channelId) { api, token in
++                    try await api.liveSettings(token: token)
++                }
++            try Task.checkCancellation()
++            settings = current
++            error = nil
++        } catch { showError(error, writing: false) }
++    }
++
++    private func save(_ update: ChzzkLiveUpdate) {
++        guard !saving else { return }
++        saving = true
++        Task {
++            defer { saving = false }
++            do {
++                try await model
++                    .withChzzkLiveSettings(streamId: streamId, channelId: channelId) { api, token in
++                        try await api.updateLiveSettings(update, token: token)
++                    }
++                await load()
++            } catch { showError(error, writing: true) }
++        }
++    }
++
++    var body: some View {
++        Group {
++            if let settings {
++                NavigationLink {
++                    TextEditView(title: String(localized: "Title"), value: settings.defaultLiveTitle,
++                                 onChange: {
++                                     $0.trim().isEmpty ? String(localized: "Enter a broadcast title.") : nil
++                                 },
++                                 onSubmit: {
++                                     if !$0.isEmpty {
++                                         save(.title($0))
++                                     }
++                                 })
++                } label: {
++                    TextItemView(name: String(localized: "Title"), value: settings.defaultLiveTitle)
++                }
++                if let api = model.chzzkApi {
++                    NavigationLink {
++                        ChzzkCategoryPicker(api: api) { save(.category($0)) }
++                    } label: {
++                        TextItemView(
++                            name: String(localized: "Category"),
++                            value: settings.category?.categoryValue ?? ""
++                        )
++                    }
++                }
++            } else if error == nil {
++                ProgressView()
++            }
++            if let error {
++                Text(error)
++                Button("Retry") { Task { await load() } }
++            }
++        }
++        .disabled(saving)
++        .task { await load() }
++    }
  }
  
  struct StreamChzzkSettingsView: View {
-@@ -66,10 +67,12 @@ struct StreamChzzkSettingsView: View {
+@@ -66,10 +195,12 @@ struct StreamChzzkSettingsView: View {
      }
  
      private func submitChannelId(value: String) {
@@ -781,7 +1521,7 @@ index 9524c5e..903e853 100644
          if stream.enabled {
              model.chzzkChannelUpdated()
          }
-@@ -80,7 +83,7 @@ struct StreamChzzkSettingsView: View {
+@@ -80,7 +211,7 @@ struct StreamChzzkSettingsView: View {
              TextField("Client ID", text: $clientId)
                  .textInputAutocapitalization(.never)
                  .disableAutocorrection(true)
@@ -790,7 +1530,7 @@ index 9524c5e..903e853 100644
                  .textInputAutocapitalization(.never)
                  .disableAutocorrection(true)
              TextButtonView("Save") {
-@@ -101,7 +104,12 @@ struct StreamChzzkSettingsView: View {
+@@ -101,13 +232,28 @@ struct StreamChzzkSettingsView: View {
                  TextEditNavigationView(
                      title: String(localized: "Channel id"),
                      value: stream.chzzkChannelId,
@@ -804,7 +1544,23 @@ index 9524c5e..903e853 100644
                  )
              } footer: {
                  ChzzkChannelIdFooterView()
-@@ -120,14 +128,28 @@ struct StreamChzzkSettingsView: View {
+             }
+             if stream.enabled {
+                 credentials
++                if model.chzzkLoggedIn {
++                    Section {
++                        ChzzkStreamLiveSettingsView(
++                            model: model,
++                            streamId: stream.id,
++                            channelId: stream.chzzkChannelId
++                        )
++                        .id(stream.chzzkChannelId)
++                    }
++                }
+                 Section {
+                     if model.chzzkLoggedIn {
+                         TextButtonView("Logout") {
+@@ -120,14 +266,32 @@ struct StreamChzzkSettingsView: View {
                          .disabled(credentialsChanged || model.chzzkClientId.isEmpty
                              || model.chzzkClientSecret.isEmpty)
                      }
@@ -819,13 +1575,17 @@ index 9524c5e..903e853 100644
 +            Section {
 +                NavigationLink("Chat") {
 +                    Form {
-+                        Toggle("Donations", isOn: $stream.chzzkChatDonations)
++                        Toggle("Chat donations", isOn: $stream.chzzkChatDonations)
++                        Toggle("Video donations", isOn: $stream.chzzkChatVideoDonations)
++                        Toggle("Subscriptions", isOn: $stream.chzzkChatSubscriptions)
 +                    }
 +                    .navigationTitle("Chat")
 +                }
 +                NavigationLink("Toasts") {
 +                    Form {
-+                        Toggle("Donations", isOn: $stream.chzzkToastDonations)
++                        Toggle("Chat donations", isOn: $stream.chzzkToastDonations)
++                        Toggle("Video donations", isOn: $stream.chzzkToastVideoDonations)
++                        Toggle("Subscriptions", isOn: $stream.chzzkToastSubscriptions)
 +                    }
 +                    .navigationTitle("Toasts")
 +                }
@@ -952,8 +1712,77 @@ index 76aaeed..091521d 100644
 -        }
      }
  }
+diff --git a/MoblinTests/Moblin/StreamingPlatforms/Chzzk/ChzzkEventSuite.swift b/MoblinTests/Moblin/StreamingPlatforms/Chzzk/ChzzkEventSuite.swift
+index a63432a..70f963a 100644
+--- a/MoblinTests/Moblin/StreamingPlatforms/Chzzk/ChzzkEventSuite.swift
++++ b/MoblinTests/Moblin/StreamingPlatforms/Chzzk/ChzzkEventSuite.swift
+@@ -62,6 +62,37 @@ struct ChzzkEventSuite {
+         #expect(donation.moderationTarget == nil)
+     }
+ 
++    @Test(arguments: ["CHAT", "VIDEO", "UNKNOWN"])
++    func donationType(kind: String) throws {
++        let data = Data(#"["DONATION",{"channelId":"host","donationType":"\#(kind)","payAmount":1000}]"#.utf8)
++        let event = try JSONDecoder().decode(ChzzkEvent.self, from: data)
++        guard case let .donation(donation) = event else {
++            Issue.record("Expected donation")
++            return
++        }
++        #expect(donation.donationType == kind)
++    }
++
++    @Test
++    func subscriptionWithoutOptionalFields() throws {
++        let data = Data(#"["SUBSCRIPTION",{"channelId":"host","subscriberNickname":"viewer"}]"#.utf8)
++        let event = try JSONDecoder().decode(ChzzkEvent.self, from: data)
++        guard case let .subscription(subscription) = event else {
++            Issue.record("Expected subscription")
++            return
++        }
++        #expect(subscription.month == nil)
++        #expect(subscription.tierNo == nil)
++        #expect(subscription.subscriberNickname == "viewer")
++    }
++
++    @Test
++    func partialLiveUpdates() {
++        let category = ChzzkLiveCategory(categoryId: "talk", categoryType: "ETC", categoryValue: "Talk")
++        #expect(ChzzkLiveUpdate.title("Testing").fields == ["defaultLiveTitle": "Testing"])
++        #expect(ChzzkLiveUpdate.category(category).fields == ["categoryType": "ETC", "categoryId": "talk"])
++    }
++
+     @Test
+     func identifiedDonorSupportsUserRestrictions() throws {
+         let sender = String(repeating: "a", count: 32)
+@@ -251,14 +282,14 @@ struct ChzzkEventSuite {
+     }
+ 
+     @MainActor
+-    @Test(arguments: ["chat", "donation", "both", "neither"])
++    @Test(arguments: ["chat", "donation", "subscription", "all", "neither"])
+     func subscriptionPermissions(denied: String) async {
+         var requests: [String] = []
+         var stopped = false
+         do {
+             try await subscribeToChzzkEvents { event in
+                 requests.append(event)
+-                if denied == event || denied == "both" {
++                if denied == event || denied == "all" {
+                     throw ChzzkApiError.status(403)
+                 }
+             }
+@@ -267,7 +298,7 @@ struct ChzzkEventSuite {
+         } catch {
+             Issue.record("Unexpected error")
+         }
+-        #expect(requests == ["chat", "donation"])
+-        #expect(stopped == (denied == "both"))
++        #expect(requests == ["chat", "donation", "subscription"])
++        #expect(stopped == (denied == "all"))
+     }
+ }
 diff --git a/MoblinTests/Moblin/Various/Settings/SettingsStreamSuite.swift b/MoblinTests/Moblin/Various/Settings/SettingsStreamSuite.swift
-index c1cae76..602083d 100644
+index c1cae76..6b1baa8 100644
 --- a/MoblinTests/Moblin/Various/Settings/SettingsStreamSuite.swift
 +++ b/MoblinTests/Moblin/Various/Settings/SettingsStreamSuite.swift
 @@ -16,7 +16,8 @@ struct SettingsStreamSuite {
@@ -966,10 +1795,19 @@ index c1cae76..602083d 100644
      ])
      func remoteChannelUpdatePreservesOmittedId(json: String, expected: String) throws {
          let incoming = try decodeStream(json)
-@@ -27,6 +28,29 @@ struct SettingsStreamSuite {
+@@ -27,6 +28,38 @@ struct SettingsStreamSuite {
          #expect(changed == (expected != "original"))
      }
  
++    @Test
++    func legacyDonationPreferenceBecomesIndependentVideoPreference() throws {
++        let stream = try decodeStream(#"{"chzzkChatDonations":false}"#)
++        #expect(!stream.chzzkChatVideoDonations)
++        stream.chzzkChatDonations = true
++        #expect(!stream.chzzkChatVideoDonations)
++        #expect(stream.chzzkChatSubscriptions)
++    }
++
 +    @Test
 +    func blankChannelUsesSignedInChannel() {
 +        let stream = SettingsStream(name: "Main")
